@@ -1,0 +1,107 @@
+/* CSS Document */
+
+/*---------------------------------*/
+* /*Set's border, padding and margin to 0 for all values*/
+{padding: 0;margin: 0;}
+html,body {margin:0px auto;}
+body{font-family: "Source Sans Pro",sans-serif;	color:#252525;padding-right: 10px;padding-top: 35px;}
+img{padding:0; margin:0;}
+.clear{ clear:both}
+.mainTable{margin:0 0 0 0px; width:100%;}
+.id {color:#fff;background-color:#9fbd4b;padding:0; width:70px; height:62px; text-align:center; font-size:24px;font-weight:bold;vertical-align:middle;line-height: 62px;}
+.dot{ padding:25px 8px;}
+#user{line-height:62px;}
+#descpic{float:right; width:360px;}
+#picture{float:left;height: 290px;width:25%;}
+
+/* css for datatables */
+.Descdatatables {width:100%;}
+.Descdatatables p{font-size:18px;padding:0px;}
+.Descdatatables input, textarea{border:1px solid #666666; font-size:12px;}
+.Descdatatables h2{font-size:14px; color:#16b9f0; font-weight:normal;}
+.Descdatatables td, th{padding:2px;}
+.Descdatatables thead th{text-align:center;color:#666666;border:1px solid #ffffff;text-transform:uppercase;}
+.Descdatatables tbody th{font-weight:bold;}
+.Descdatatables tbody tr{text-align:left;}
+.Descdatatables tbody tr.odd{background:#ffffff;border-top:1px solid #ffffff;}
+.Descdatatables tbody th a:link, tbody th a:visited{color:#666666;padding:3px 0px 0px 5px;}
+.Descdatatables tbody th a:hover{color:#009900;}
+.Descdatatables table td a:link, table td a:visited{color:#666666;text-decoration:none;font-weight: bold;}
+.Descdatatables table td a:hover{color:#009900;text-decoration:underline;font-weight: bold;}
+
+
+
+.datatables tbody th a:link, tbody th a:visited{color:#666666;padding:3px 0px 0px 18px;}
+.datatables tbody th a:hover{color:#009900;}
+.datatables table td a:link, table td a:visited{color:#666666;text-decoration:none;font-weight: bold;}
+.datatables table td a:hover{color:#009900;text-decoration:underline;font-weight: bold;}
+/* input type css */
+input.send{cursor:pointer; border:none;
+	background:transparent url("../../images/send.gif") no-repeat; border:none; width:58px; height:29px; margin-right:5px;
+}
+input.cancel{cursor:pointer; border:none;
+	background:transparent url("../../images/cancel.gif") no-repeat; border:none; width:71px; height:29px; margin-right:5px;}
+input.startidea{cursor:pointer; border:none;
+	background:transparent url("../../images/startidea.gif") no-repeat; border:none; width:133px; height:29px; margin-right:5px;}	
+input.goback{background-color: #9fbd4b;background-image: url("../../images/left_arrow.png");background-position: 30px center;background-repeat: no-repeat;border: 0 none;color: #ffffff;cursor: pointer;font-size: 24px;font-weight: bold;padding: 22px 0px 22px 22px;width: 195px;margin: 0px 18px;}
+
+/*---------------FOR CONTESTANT--------------*/
+#div_description{}
+.contestant{color:#c5ced0; font: bold 13px Verdana, Arial, Helvetica, sans-serif;}
+.contestant_img{border:1px solid #ccc; padding:1px; height:96px; width:80px; margin-left:5px; }
+.description_text{border:1px solid #ccc; padding:5px; color:#c5ced0; font:11px Verdana, Arial, Helvetica, sans-serif; height:auto;}
+#div_tellfriends {}
+
+.msg{color: #013b55;font-size:48px;padding: 5px 0;}
+.msg span{font-size:24px;}
+#div_voteresult .subtitle {font-size:20px;padding: 8px 0;}
+.headbanner {
+display: none;
+}
+#div_voteresult .msg1{
+background:#ff9900 url(../../images/alert1.png) no-repeat left; 
+color:#fff; 
+font-family:Arial, Helvetica, sans-serif; 
+font-size:15px; 
+/*position:absolute;
+top:60px;
+left:30px;*/
+background-position:5px 4px;
+padding:3px 5px 5px 25px;
+margin:0 0 0 40px;
+}
+
+.node p{margin:0!important; padding:0!important;}
+#node-608 .content p{margin:0!important;}
+
+#dialogBox {font-family: arial;font-size: 12px;}
+.mainTable .even, .datatables .even {background-color: #f1f0f0;}
+.mainTable .title {font-size: 20px;font-weight: bold;}
+.mainTable .finalistName, .mainTable .readmore {font-size: 20px;line-height: 62px;}
+.mainTable .readmore {color: #0098db;font-weight: bold;}
+.votebtn {background-color: #0098db;border: 0 none;color: #ffffff;cursor:pointer;font-size: 20px;font-weight: bold;padding: 10px 20px;width: 100%;}
+.Descdatatables .description_head {padding-right: 16px;}
+.Descdatatables .headsection, .Descdatatables .descridoption_text {padding-bottom: 25px;}
+.Descdatatables .descridoption_text {padding-top: 25px;padding-right: 20px;}
+.Descdatatables .headsection, .Descdatatables .descridoption_text, .Descdatatables .addition_files {border-bottom: 2px solid #cccccc;}
+.Descdatatables .headsection .headtitle {float: left;font-size: 24px;margin-left: 25px;width:71%}
+.Descdatatables .headtitle h1 {color: #013b55;font-size: 38px;font-weight: normal;margin-top: 10px;}
+.Descdatatables .addition_files {background-color: #f1f0f0;padding: 0px 25px;}
+.Descdatatables .addition_files #descpic1 {color: #0098db;font-size: 16px;font-weight: 600;padding: 25px 0;text-align: center;}
+.Descdatatables .addition_files .links {color: #0098db;text-decoration: none;}
+.Descdatatables .addition_files #video_td {background-position: center center;background-repeat: no-repeat;background-size: auto 100%;height:190px;margin: 25px 0;position: relative;width:100%;}
+.Descdatatables .addition_files #video_td .links img {left: 15px;position: relative;top: 8px;}
+.Descdatatables .addition_files .videoBlock {background-color: rgba(0, 0, 0, 0.7);position: absolute;width: 100%;}
+.Descdatatables .addition_files .videoBlock a.links {color: #ffffff;cursor: pointer;display: block;font-size:24px;font-weight:600;line-height: 190px;text-align: center;vertical-align: middle;}
+.Descdatatables .votebtn {font-size: 24px;padding: 22px;width: 195px;margin: 22px 18px;}
+.datatables .dot {padding: 15px 8px;}
+.datatables .votingcount {background-color: #0098db;color: #ffffff;float:left;height: 62px;line-height: 62px;text-align: right;}
+.datatables .votingcount .totalvotes {font-size: 24px;font-weight: bold;padding-right: 25px;}
+.datatables .voteTitle {float: left;font-weight:bold;font-size:20px;line-height: 62px;margin-left: 18px;}
+.subtitle {font-size: 20px;}
+#content .mainTable .rulesbtn {background-color: #ff8800;color: #ffffff;font-size:20px;font-weight: bold;padding: 17px;}
+
+@media (max-width: 1012px){
+	.mainTable, .Descdatatables, .datatables{width:1012px;}
+	#content, #div_describe, #voteResultBlock {overflow-x: auto;overflow-y: hidden;width: 100%;}
+}

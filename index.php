@@ -2,20 +2,118 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>BKFK Voting</title>
-    <link rel="stylesheet" type="text/css" href="lib/css/bkfkMain.css" media="all" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
 
-    <script src="lib/js/nepoajax.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/canvasjs.min.js"></script>
+	<script>
+	function castVote(ideaID, clickedID) {
+        window.scrollTo(0, 0);
+        var msgDiv = document.getElementById("dialogBox");
+        document.getElementById("hdnideaid").value = ideaID;
+        //alert(msgDiv);
+        if (msgDiv != null) {
+            msgDiv.parentNode.removeChild(msgDiv);
+        }
+        //create element
+        var title = 'Voting Confirmation';
+        var message = "You are voting for idea number " + ideaID + ". Are you sure?";
+        var box = document.createElement('div');
+        var titlebar = document.createElement('p');
+        var messageBox = document.createElement('p');
+        var okButton = document.createElement('button');
+        var cancelButton = document.createElement('button');
+        //give id to each element
+        box.id = "dialogBox";
+        titlebar.id = "titlebar";
+        messageBox.id = "message";
+        okButton.id = "okButton";
+        cancelButton.id = "cancelButton";
+        //attach message titlebar and message and text to ok button
+        titlebar.innerHTML = title;
+        messageBox.innerHTML = message;
+        okButton.innerHTML = "Ok";
+        cancelButton.innerHTML = "Cancel";
+        //append first titlebar and then message
+        box.appendChild(titlebar);
+        box.appendChild(messageBox);
+        box.appendChild(okButton);
+        box.appendChild(cancelButton);
+        //set position of dialog box
 
-    <script src="lib/js/rumsanCharts.js"></script>
+        var boxWidth = 325;
+        var boxLeftPosition = window.outerWidth * 0.5 - boxWidth * 0.5;
+        var topMargin = 150;
 
-    <script type="text/javascript" src="lib/js/customDialog.js"></script>
+        box.style.position = "fixed";
+        box.style.width = boxWidth + "px";
+        box.style.left = boxLeftPosition + "px";
+        box.style.top = topMargin + "px";
+        box.style.visibility = "visible";
+        box.style.border = "1px solid #999999";
+        box.style.paddingBottom = "8px";
+        box.style.backgroundColor = "#FFFFFF";
+        box.style.zIndex = "999999";
+        //set style for title bar
+        titlebar.style.padding = "5px";
+        titlebar.style.margin = "0";
+        titlebar.style.fontWeight = "bolder";
+        titlebar.style.backgroundColor = "#DDDDDD";
 
+        //set style  for message 
+        messageBox.style.margin = "15px 10px 5px 5px";
+        messageBox.style.textAlign = "center";
+
+        //set style for ok button 
+        okButton.style.textAlign = "center";
+        okButton.style.width = "55px";
+        okButton.style.marginLeft = "95px";
+
+        //set style for cancel Button
+        cancelButton.style.TextAlign = "center";
+        cancelButton.style.width = "55px";
+        cancelButton.style.marginLeft = "10px";
+        //attach box to the body
+        document.body.appendChild(box);
+
+        //attach onclick event for ok button
+        okButton.onclick = function() {
+            document.body.removeChild(document.getElementById('dialogBox'));
+            resettime();
+            
+            //var lockVote=confirm("You are voting for idea number "+ideaID+". Are you sure?");
+            //if (lockVote){
+            voteincrease(ideaID);
+            if (document.getElementById("div_result").style.display == "block") {
+                document.getElementById(varimgid).src = varsrc2;
+            }
+            /*}
+            else{
+            document.getElementById(varimgid).src=varsrc1;
+            }*/
+        };
+        cancelButton.onclick = function() {
+            document.body.removeChild(document.getElementById('dialogBox'));
+            return false;
+        };
+
+    }
+
+    function viewdescription(varideaid, varpollsid) {
+    	//window.location.href = 'report2.asp?pollsid=1&status=0';
+    	//console.log(varpollsid+'&ideaid='+varideaid);
+    	window.location.href = 'description.php?pollsid='+varpollsid+'&ideaid='+varideaid;
+		
+    }
+
+	</script>
     <script>
-        var time20;
+        /*var time20;
         var ajax = new nepoAjax();
         var mywindow;
         var Voted = 0;
-        var DispReport = new rumsanCharts("images/FCF_Column3D.swf", "chart1Id", "550", "400");
+        var DispReport = new rumsanCharts("images/FCF_Column3D.swf", "chart1Id", "550", "400");*/
         function showVideo() {
             document.getElementById('ytplayer').style.display = 'block';
         }
@@ -131,7 +229,7 @@
         function voterclosedfucntion() {
             alert("Voting Has Been Closed!!!"); 
         }
-        function castVote(ideaID, varsrc1, varsrc2, varimgid, topMargin) {
+        /*function castVote(ideaID, varsrc1, varsrc2, varimgid, topMargin) {
             var parent = document.getElementById('video_td');
             var ytpl = document.getElementById('ytplayer');
             
@@ -221,17 +319,14 @@
                 if (document.getElementById("div_result").style.display == "block") {
                     document.getElementById(varimgid).src = varsrc2;
                 }
-                /*}
-                else{
-                document.getElementById(varimgid).src=varsrc1;
-                }*/
+                
             };
             cancelButton.onclick = function() {
                 document.body.removeChild(document.getElementById('dialogBox'));
                 return false;
             };
 
-        }
+        }*/
 
 
         function ShowMessage(title, message) {
@@ -325,7 +420,7 @@
             
         }
 
-        function viewdescription(varideaid, varpollsid) {
+        /*function viewdescription(varideaid, varpollsid) {
             resettime();
             ajax.setVar("varideaid", varideaid);
             ajax.setVar("varpollsid", varpollsid);
@@ -335,7 +430,7 @@
             ajax.onError = servererror;
             ajax.method = "GET"
             ajax.runAJAX();
-        }
+        }*/
         function postviewdescription() {
             var result = ajax.response;
             document.getElementById("div_tellfriends").style.display = "none";
@@ -691,16 +786,21 @@
 		        		$result = mysql_fetch_object($query);
 		        		?>
 		        		<?php /* ?><img src="<?php echo $result->pollsimg; ?>" alt="headbanner" /><?php */ ?>
-		        		<br>
+		        		<h1><?php echo $result->pollsdetail; ?></h1>
+		        		<br />
 		        		<table cellpadding="0" cellspacing="0" class="mainTable">
 		        			<?php 
-		        			$strsql = 'SELECT ideaid,idea_name,idea_username,user_age,idea_link,idea_img FROM tblideapoll where pollsid="'.$pollsid.'" and status=1 ORDER BY cast( ideaid as signed)';
-		        			
-		        			$query = mysql_query($strsql);
-		        			
+	      					$strsql = 'SELECT ideaid,idea_name,idea_username,user_age,idea_link,idea_img FROM tblideapoll where pollsid="'.$pollsid.'" and status=1 ORDER BY cast( ideaid as signed)';
+	        				$query = mysql_query($strsql);
+							$i = 0;        			
 		        			while($row = mysql_fetch_object($query)){
+		        				if($i%2 == 0){
+		        					$trclass = "even";	
+		        				}else{
+		        					$trclass = "odd";	
+		        				}
 		        			?>
-		        				<tr>
+		        				<tr class="<?php echo $trclass; ?>">
 		        					<td width="25" class="dot" valign="top">
 		        						<div class="id">
 		        							<?php echo $row->ideaid; ?>
@@ -718,7 +818,7 @@
 		        					</td>
 		        					<td>
 		        						<div class="linkBtn">
-		        							<?php echo $row->idea_link; ?>
+		        							<div class="linkBtn" style="cursor: pointer;" onclick="viewdescription('<?php echo $row->ideaid; ?>','<?php echo $pollsid; ?>');"><?php echo $row->idea_link; ?></div>
 		        						</div>
 		        					</td>
 		        					<td>
@@ -728,6 +828,7 @@
 		        					</td>
 		        				</tr>
 		        			<?php
+		        			$i++;
 		        			}
 		        			?>
 		        		</table>
@@ -826,5 +927,6 @@
     </div>
     <div class="clear">
     </div>
+    <script src="js/iframeResizer.contentWindow.min.js"></script>
 </body>
 </html>

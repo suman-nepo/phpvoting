@@ -43,7 +43,7 @@
 						for($i = 1; $i <= 10; $i++){
 							$strsql = "SELECT voted_for, count(voter_ip) as total FROM tblusertransaction where pollsid = '".$pollsid."' AND voted_for = '".$i."' AND ent_Date >= '".$start_date."'";
 							$query = mysql_query($strsql);
-							echo $strsql;
+							//echo $strsql;
 							$result = mysql_fetch_object($query);
 							$arrayData[$i][1] = $result->voted_for;
 							$arrayData[$i][2] = $result->total;
